@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User List</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center m-5">Customers List</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="customers , index: ${allCustomers}">
+                <td th:text="${index.count}"></td>
+                <td th:text="${customers.name}"></td>
+                <td th:text="${customers.email}"></td>
+                  <td>
+                    <a class="btn btn-primary" th:href="@{/customer/edit/{id}(id=${customers.id})}">Edit</a>
+                  <!-- @{/edit/{id}(id=${data.id})}" -->
+                    <a class="btn btn-danger" th:href="@{'/customer/delete/'+ ${customers.id}}">Delete</a></td>      
+ 
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
