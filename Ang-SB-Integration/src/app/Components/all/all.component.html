@@ -1,0 +1,62 @@
+<!-- <h3 class="text-center">STUDENTS LIST PAGE</h3>
+
+<table class="table table-hover">
+  <tr class="bg-info text-white">
+    <th>ID</th>
+    <th>NAME</th>
+    <th>Email</th>
+    <th>Update</th>
+    <th>Delete</th>
+    <th>View</th>
+  </tr>
+  <tr *ngFor="let s of customers ; let i=index">
+    <td>{{ i+1}}</td>
+    <td>{{ s.name }}</td>
+    <td>{{ s.email }}</td>
+    <td>
+      <button type="button" class="btn btn-danger" (click)="deleteCustomer(s.id)">DELETE</button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-info" (click)="updateCustomer(s.id)">UPDATE</button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary" (click)="viewCustomer(s.id)">VIEW</button>
+    </td>
+  </tr>
+</table> -->
+
+
+
+<!-- <td>
+                  <button type="button" class="btn btn-danger" (click)="deleteStudent(sob.stdId)">DELETE</button> &nbsp;&nbsp;
+                  <button type="button" class="btn btn-warning" (click)="editStudent(sob.stdId)">EDIT</button>
+            </td> -->
+
+<!-- -------------------------------------------------------------------------------------- -->
+
+<h3 class="text-center">CUSTOMERS LIST PAGE</h3>
+
+<table class="table table-hover">
+  <tr class="bg-info text-white">
+    <th>ID</th>
+    <th>NAME</th>
+    <th>Email</th>
+    <th>Update</th>
+    <th>Delete</th>
+    <th>View</th>
+  </tr>
+  <tr *ngFor="let customer of customers; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ customer.name }}</td>
+    <td>{{ customer.email }}</td>
+    <td>
+      <button type="button" class="btn btn-danger" (click)="deleteCustomer(customer.id)">DELETE</button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-info" (click)="updateCustomer(customer.id)">UPDATE</button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary" (click)="viewCustomer(customer.id)">VIEW</button>
+    </td>
+  </tr>
+</table>

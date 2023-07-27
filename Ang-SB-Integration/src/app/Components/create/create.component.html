@@ -1,0 +1,30 @@
+<div class="container">
+  <h3>Customer Form</h3>
+  <h3 class="text-center text-secondary">{{ msg }}</h3>
+  
+  <form  #customerForm="ngForm" (ngSubmit)="createCustomer(customerForm)">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="customer.name" name="name" id="name" placeholder="Enter your name" #name="ngModel" required maxlength="32" [ngClass]="{error : name.errors && name.touched}">
+      <div *ngIf="name.errors && name.touched">
+
+        <small class="text-danger" *ngIf="name.errors['required']">First Name field is requird</small>
+
+        <small class="text-danger" *ngIf="name.errors['maxlength']">Only 32 characters are allowed.</small>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" [(ngModel)]="customer.email" name="email" id="email" placeholder="Enter your email"  #email="ngModel" required maxlength="32" [pattern]="emailRegex" [ngClass]="{error : email.errors && email.touched}">
+      <div *ngIf="email.errors && email.touched">
+
+        <small class="text-danger" *ngIf="email.errors['required']">Email field is requird</small>
+
+        <small class="text-danger" *ngIf="email.errors['maxlength']">Email should be maximum 32 characters long.</small>
+        <small class="text-danger" *ngIf="email.errors['pattern']">Please enter a valid email.</small>
+
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

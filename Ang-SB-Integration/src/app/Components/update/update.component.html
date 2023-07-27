@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+
+</head>
+<body>
+  <div class="container">
+    <h3>Customer Update Form</h3>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" [(ngModel)]="customer.name" name="name" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" [(ngModel)]="customer.email" name="email" id="email" placeholder="Enter your email">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="updateCustomer()">Submit</button>
+    </form>
+   
+  </div>
+</body>
+</html>
+
